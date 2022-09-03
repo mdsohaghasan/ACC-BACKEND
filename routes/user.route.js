@@ -11,8 +11,16 @@ const {
 
 router.get("/", getAllUsers);
 router.get("/:id", getOneUser);
-router.delete("/:id", deleteUser);
-router.patch("/:id", updateUser);
 router.post("/", createUser);
+router.patch("/:id", updateUser);
+router.delete("/:id", deleteUser);
 
 module.exports = router;
+
+
+// GET /user/all
+// GET /user/random
+// POST /user/save
+// PATCH /user/update
+// PATCH /user/bulk-update
+// DELETE /user/ delete

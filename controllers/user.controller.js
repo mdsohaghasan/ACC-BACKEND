@@ -25,7 +25,12 @@ const createUser = async (req, res) => {
     const newUser = new User({
       id: uuidv4(),
       name: req.body.name,
-      age: Number(req.body.age),
+      gender: req.body.gender,
+      contact: req.body.contact,
+      address: req.body.address,
+      photoUrl: req.body.photoUrl,
+      // age: Number(req.body.age),
+
     });
     await newUser.save();
     res.status(201).json(newUser);
@@ -38,6 +43,10 @@ const updateUser = async (req, res) => {
   try {
     const user = await User.findOne({ id: req.params.id });
     user.name = req.body.name;
+    user.gender = req.body.gender,
+    user.contact = req.body.contact,
+    user.address = req.body.address,
+    user.photoUrl = req.body.photoUrl,
     user.age = Number(req.body.age);
     await user.save();
     res.status(200).json(user);

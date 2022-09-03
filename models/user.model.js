@@ -9,14 +9,37 @@ const userSchema = mongoose.Schema({
     type: String,
     reuire: true,
   },
-  age: {
-    type: Number,
+  gender: {
+    type: String,
     reuire: true,
   },
+  contact: {
+    type: String,
+    reuire: true,
+  },
+  address: {
+    type: String,
+    reuire: true,
+  },
+  photoUrl: {
+    type: String,
+    reuire: true,
+  },
+  // age: {
+  //   type: Number,
+  //   reuire: true,
+  // },
   createdOn: {
     type: Date,
     default: Date.now,
   },
 });
+
+
+
+
+
+
+
 
 module.exports = mongoose.model("User", userSchema);
